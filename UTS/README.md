@@ -16,3 +16,19 @@ Cara menilaikan :
 Score nilai :
 - Upload program : 50
 - Mendemokan dengan video di youtube : 50
+
+## Screenshots 
+### Create Customer
+![]('SS/create_customer.png')
+### Get All Customer
+![]('SS/get_all_customers.png')
+### Get Customer By ID
+![]('SS/get_customer.png')
+### Update Customer
+![]('SS/update_customer.png')
+### Delete Customer
+![]('SS/delete_customer.png')
+### Create eKYC
+![]('SS/create_ekyc.png')
+### Update eKYC
+![]('SS/update_ekyc.png')
