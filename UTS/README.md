@@ -32,3 +32,10 @@ Score nilai :
 ![](SS/create_ekyc.png)
 ### Update eKYC
 ![](SS/update_ekyc.png)
+
+
+## How to run?
+```
+pip install -r requirements.txt 
+python3 api.py
+```
