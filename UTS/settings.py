@@ -10,3 +10,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 
 db = SQLAlchemy(app)
+
+
+
+#upload images for ekyc
+UPLOAD_FOLDER = {
+    "ktp":"media/pictures/ktp/",
+    "selfie":"media/pictures/selfie/"
+}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
