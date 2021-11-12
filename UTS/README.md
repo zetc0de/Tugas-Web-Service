@@ -39,3 +39,6 @@ Score nilai :
 pip install -r requirements.txt 
 python3 api.py
 ```
+
+## [Postman Collection](https://www.getpostman.com/collections/12306dbf87e6862c1e73)
+
