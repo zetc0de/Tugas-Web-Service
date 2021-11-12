@@ -1,3 +1,4 @@
+from os import pipe
 from settings import *
 import json
 from ekyc import *
@@ -68,6 +69,7 @@ class Customers(db.Model):
         #     print("non?")
         #     return False
         else:
+            print("asdasd")
             Ekyc.del_ekyc(id)
             db.session.commit()
             return True

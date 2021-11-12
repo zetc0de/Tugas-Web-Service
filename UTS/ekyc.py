@@ -46,17 +46,39 @@ class Ekyc(db.Model):
     def get_ekyc(id):
         ekyc = Ekyc.query.filter_by(customer_id=id).first()
         if ekyc is None:
-            ekyc = 'Not uploaded yet'
+            # ekyc = 'Not uploaded yet'
+            ekyc = [{
+                "ekycID" : "",
+                "ktp_filename" : {
+                    "href" : "",
+                    "rel" : "icon",
+                    "method" : "GET"
+                },
+                "selfie_filename" : {
+                    "href" : "",
+                    "rel" : "icon",
+                    "method" : "GET"
+                }
+            }]
         else:
             ekyc = [Ekyc.json(ekyc)]
         return ekyc
 
     def del_ekyc(id):
         ekyc = Ekyc.query.filter_by(customer_id=id).first()
-        ekycID = Ekyc.json(ekyc)['ekycID']
-        old_ktp = Ekyc.json(ekyc)['ktp_filename']
-        old_selfie = Ekyc.json(ekyc)['selfie_filename']
+        if ekyc is None:
+            return False
+        
+        # ekycID = Ekyc.json(ekyc)['ekycID']
+        # old_ktp = Ekyc.json(ekyc)['ktp_filename']
+        # old_selfie = Ekyc.json(ekyc)['selfie_filename']
+        ekycID = ekyc.id
+        old_ktp = ekyc.ktp_filename
+        old_selfie = ekyc.selfie_filename
+
         del_ekyc = Ekyc.query.filter_by(id=ekycID).delete()
+        # if ekyc is None:
+        #     return False
         if del_ekyc == False:
             return False
         else:
