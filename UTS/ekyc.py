@@ -13,8 +13,16 @@ class Ekyc(db.Model):
     def json(self):
         return {
             "ekycID":self.id,
-            "ktp_filename":self.ktp_filename,
-            "selfie_filename":self.selfie_filename
+            "ktp_filename": {
+                "href" : self.ktp_filename,
+                "rel" : "icon",
+                "method" : "GET"
+            },
+            "selfie_filename": {
+                "href" : self.selfie_filename,
+                "rel" : "icon",
+                "method" : "GET"
+            }
         }
     
     def upload_ekyc(id,ktp_filename,selfie_filename):
